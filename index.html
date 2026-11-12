@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cava 57 · Licores a domicilio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="age-gate" class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="gate-box">
+    <h1 id="gate-title">¿Eres mayor de 18 años?</h1>
+    <p>La venta de licor está prohibida a menores de edad. Necesitamos confirmarlo para continuar.</p>
+    <div class="row">
+      <button class="btn" id="age-yes">Sí, tengo 18 o más</button>
+      <a class="btn ghost" href="https://www.google.com">No</a>
+    </div>
+  </div>
+</div>
+
+<header class="top">
+  <a class="brand" href="#">Cava 57</a>
+  <input id="search" type="search" placeholder="Buscar whisky, ron, vino…" aria-label="Buscar productos">
+  <button class="cart-btn" id="open-cart" aria-label="Abrir carrito">Carrito <span id="cart-count">0</span></button>
+</header>
+
+<section class="hero">
+  <h2>Lo que se brinda esta noche, en tu puerta.</h2>
+  <p>Entrega el mismo día. Paga al recibir o en línea.</p>
+</section>
+
+<nav class="filters" id="filters" aria-label="Categorías"></nav>
+<main><div class="grid" id="grid"></div><p id="empty" class="empty" hidden>No encontramos productos. Prueba con otra búsqueda o categoría.</p></main>
+
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head"><h2>Tu pedido</h2><button id="close-cart" aria-label="Cerrar carrito">✕</button></div>
+  <div id="cart-items" class="cart-items"></div>
+  <div class="drawer-foot">
+    <div class="total"><span>Total</span><strong id="cart-total">$0</strong></div>
+    <form id="checkout">
+      <input name="nombre" placeholder="Nombre completo" required autocomplete="name">
+      <input name="telefono" type="tel" placeholder="Teléfono" required autocomplete="tel">
+      <input name="direccion" placeholder="Dirección de entrega" required autocomplete="street-address">
+      <select name="pago" aria-label="Método de pago">
+        <option>Pago contra entrega</option>
+        <option>Transferencia / Nequi</option>
+        <option>Pago en línea (enlace)</option>
+      </select>
+      <button class="btn" type="submit">Enviar pedido por WhatsApp</button>
+    </form>
+  </div>
+</aside>
+<div class="scrim" id="scrim" hidden></div>
+<div class="toast" id="toast" role="status"></div>
+<footer class="foot">Beber con moderación. Prohibida la venta a menores de 18 años. © Cava 57</footer>
+<script src="app.js"></script>
+</body>
+</html>
